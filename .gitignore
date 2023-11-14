@@ -1,0 +1,10 @@
+*.xlsx
+*.xls
+*.csv
+*.exe
+*.json
+chatgpt_api_key.txt
+audio-chunks/
+results/
+videos/
+__pycache__/
