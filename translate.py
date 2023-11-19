@@ -42,3 +42,5 @@ def translate_polish_transcription(path_to_transcription):
 
     text_file = open(f'{path_to_transcription[:-4]}_EN.txt', 'w', encoding="utf-8")
     text_file.write(text_translated)
+    print(f'Saved file: {path_to_transcription[:-4]}_EN.txt')
+    return None

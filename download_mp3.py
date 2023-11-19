@@ -23,3 +23,7 @@ def download(yt_url, destination):
     new_file_name = base.split("/")[-1]
     print(new_file_name)
     return(new_file_name)
+
+def yt_video_title(yt_url):
+    yt_video = YouTube(yt_url)
+    return yt_video.streams[0].title
