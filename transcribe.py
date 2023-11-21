@@ -33,6 +33,7 @@ def transcribe(video_code):
 
         #print(whole_text_eng) # >>> string in english
         video_title = download_mp3.yt_video_title(youtube_url + video_code)
+        video_title = ''.join(letter for letter in video_title if letter.isalnum())
         text_file = open(f'results/{video_title}_EN.txt', 'w', encoding="utf-8")
         text_file.write(whole_text_eng)
         print(f'Saved file: results/{video_title}_EN.txt')
