@@ -1,15 +1,16 @@
 import openai
 
-with open('chatgpt_api_key.txt', 'r') as key_file:
-    openai.api_key = key_file.readline()
+def ask_chatgpt(question):
+    with open('chatgpt_api_key.txt', 'r') as key_file:
+        openai.api_key = key_file.readline()
 
 
-messages = [{"role": "system", "content": "You are a film critic."}]
-messages.append({"role": "user", "content": "Tell me something about movie Avatar in 100 words."})
+    messages = [{"role": "system", "content": "You are a person who writes summaries of youtube videos"}]
+    messages.append({"role": "user", "content": question})
 
-answers = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-4k",
-        messages=messages
-    )
+    answers = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=messages
+        )
 
-print(answers['choices'][0]['message']['content'])
+    return answers['choices'][0]['message']['content']
